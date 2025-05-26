@@ -21,14 +21,14 @@ jobs:
       id: login-ecr
       uses: aws-actions/amazon-ecr-login@v1
       env:
-        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        AWS_SESSION_TOKEN: ${{ secrets.AWS_SESSION_TOKEN }}
+        AWS_ACCESS_KEY_ID: ${{ ASIAQ3EGQMCEK2AN3MJL }}
+        AWS_SECRET_ACCESS_KEY: ${{ 5xCNfr5dBA+mFeuuwqV2z355zPtHoHsWTzTDmQFa }}
+        AWS_SESSION_TOKEN: ${{ IQoJb3JpZ2luX2VjEIH//////////wEaCXVzLXdlc3QtMiJIMEYCIQCO0fRxXVtJOYdnKZLL4Mn8Ue5IUjy2nsr4We2sEdR8mwIhAK6HckkAES3gGzT86F1zOIQW5tbhSYgPbb+Ph94/AVh0Kq8CCEoQABoMMDU4MjY0MTUwMTUyIgz55PTBCCWVsz6zhCYqjALHbisg/YBXaGzbhivFuYdk8/LPQucyf9ULW/o1/+Zk5DGL/S5oUSVdA7LdpA6qsb6asSZexl40k+9oA3/FiVuY6Pv7EyuRTrCny+jD6LhiB8IgCEI59CiXjMUH+i0xwlcyoPGCpaLa1mmfO90nZrwEauV4vx0mMDiyNif93wS7F8g3D8g9PyWLZAIBBDkVZ/2RFpvzxoJAST7LFQlcin295IYljaYq4hnBotTAs1wTZKLLcwp82oigrQajUyJ+5G1Rb3G+Zfq9K5BPy5BQJ0+kRh3AMQA94kB+21NDr1ZUQOrHgdgsQlx6XnalAVM4KKWCdTsuM3P3CJfiod+LoFvxRVByxDWCb3evdhIZMIKs0sEGOpwBSN6C6I3z2juxI2BCzb4hR5+deene1rDjXaoqrD9qQhPz5aybxqOyWEIi0BN3zQhSvbSrbRWEZSYoR2nlvxrLwQUz0N7RLsXRdt/BZCOHCjei77pNhLf7l/9+BiNP/wgo2Sz0LXoq1K5dOvHPia5iqQKtxMe62jeOWwxxbTOtb3j8E3/iqVi4cyt1KBz9yU5obQHuZ/ruBwVbQS+6 }}
         AWS_REGION: us-east-1
 
     - name: Build, test, tag, and push image to Amazon ECR
       env:
-        ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+        ECR_REGISTRY: ${{ 058264150152.dkr.ecr.us-east-1.amazonaws.com/clo835-week3 }}
         ECR_REPOSITORY: clo835-week3-1
         IMAGE_TAG: v0.1
       run: |

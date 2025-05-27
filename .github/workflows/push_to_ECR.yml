@@ -15,10 +15,9 @@ jobs:
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:
-       aws-access-key-id: ASIAQ3EGQMCEK2AN3MJL
-       aws-secret-access-key: 5xCNfr5dBA+mFeuuwqV2z355zPtHoHsWTzTDmQFa
-
-        aws-region: IQoJb3JpZ2luX2VjEIj//////////wEaCXVzLXdlc3QtMiJHMEUCICdPFiRv0gQ4ppR/vy0+XwSSZP3wIm7YDbd/6YXe6lMWAiEAwZK1DuuGf6wMUq5dSevsM9+bBsl67wVma0NdxmtWPm0qrwIIURAAGgwwNTgyNjQxNTAxNTIiDNijL+ayf2esIyrEOCqMAkFf+5JC9zr60nfOlfhFfzzLpEvinfF0dHiQmkI29GGjZdHV9qFB2lWT68wN2GzDIDC/kbcAlYV6ipCiRBE/jHWlsHobKnYazLqNWA9CeSkPd3pKyZxQHq6ssloTKxdq8yPdyr+ueAdOVRkrA2P4PiJnFaVKorgtPoNowQg2gQQTJrr8iRLe4a1TLUYpEFhmmNx8bPF0w8/GjJ0GwZiXVwlXsFw/NM9WxGwrY8npAZLOGVk+39kvfQIVsmSKrLFnZdULrJuRUtTUMCDf9Al3HP4MBGhrfGEm/z3VaI77/Rbd700zmScKdEpGJ/LO2hCABgWUkck2/NNTGbUXSNN4b3f4ukPibhgKpssYB+Ywuu/TwQY6nQH9AiK5USGk1Q8UfeqJRJrfzTPEHCOjLGUcoXnJ2q/xixSalebsrvA3aDA3O138s3m8lD6T6HG+OLpsuxXEyyFMjJG4i57GODPjkQN67VDB49yBysCCPRHQsk1EQLSVwXVogvSBqgtohgexzAqf12c7DFkzfFoVo05ZC/UtXbop8YKR7yyRioyN1CWTj0oWBE4XxhzOV/a7Rc2v+AtG
+        aws-access-key-id: ${{ ASIAQ3EGQMCEGNVM7N4B }}
+        aws-secret-access-key: ${{ yx/6X6JyQUJwmwIl21NPvre1ukPP/eohOSlx2x9j }}
+        aws-region: ${{ us-east-1 }}
 
     - name: Log in to Amazon ECR
       id: login-ecr
@@ -26,11 +25,12 @@ jobs:
 
     - name: Build, tag, and push image to Amazon ECR
       env:
-        ECR_REGISTRY: 058264150152.dkr.ecr.us-east-1.amazonaws.com/clo835-week3
-        ECR_REPOSITORY:  clo835-week3
+        ECR_REGISTRY: ${{ 058264150152.dkr.ecr.us-east-1.amazonaws.com/clo835-week3 }}
+        ECR_REPOSITORY: ${{ clo835-week3 }}
         IMAGE_TAG: v0.1
       run: |
         docker build -t $ECR_REPOSITORY:$IMAGE_TAG .
         docker tag $ECR_REPOSITORY:$IMAGE_TAG $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+
 
